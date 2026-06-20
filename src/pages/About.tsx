@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Layout, PageHeader } from "@/components/site/Layout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShieldCheck, Sparkles, HeartHandshake, Lightbulb, Target, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Sparkles, HeartHandshake, Lightbulb, Target, ArrowRight, CheckCircle2, Layers, Briefcase, Scale, Globe, Headphones, Clock } from "lucide-react";
 import aboutImg from "@/assets/about.jpg";
 
 const values = [
@@ -14,12 +14,12 @@ const values = [
 ];
 
 const whyUs = [
-  { gradient: "from-blue-500 to-blue-700", title: "End-to-End Trade Solutions", desc: "From documentation and licensing to customs clearance and freight movement, we manage the complete process." },
-  { gradient: "from-violet-500 to-violet-700", title: "Experienced Professionals", desc: "Our team possesses extensive knowledge of international trade regulations and logistics operations." },
-  { gradient: "from-rose-500 to-rose-700", title: "Compliance-Focused Approach", desc: "We ensure every transaction adheres to the latest regulatory requirements." },
-  { gradient: "from-emerald-500 to-emerald-700", title: "Global Network", desc: "Strong partnerships with shipping lines, airlines, customs authorities and logistics providers." },
-  { gradient: "from-orange-500 to-orange-700", title: "Personalized Support", desc: "Every client receives customized solutions tailored to their business requirements." },
-  { gradient: "from-cyan-500 to-cyan-700", title: "Timely Execution", desc: "We prioritize speed, efficiency and reliability to minimize delays." },
+  { icon: Layers, gradient: "from-sky-500 to-blue-600", title: "End-to-End Trade Solutions", desc: "From documentation and licensing to customs clearance and freight movement, we manage the complete process." },
+  { icon: Briefcase, gradient: "from-fuchsia-600 to-purple-800", title: "Experienced Professionals", desc: "Our team possesses extensive knowledge of international trade regulations and logistics operations." },
+  { icon: Scale, gradient: "from-rose-600 to-red-700", title: "Compliance-Focused Approach", desc: "We ensure every transaction adheres to the latest regulatory requirements." },
+  { icon: Globe, gradient: "from-green-500 to-emerald-600", title: "Global Network", desc: "Strong partnerships with shipping lines, airlines, customs authorities and logistics providers." },
+  { icon: Headphones, gradient: "from-yellow-500 to-orange-500", title: "Personalized Support", desc: "Every client receives customized solutions tailored to their business requirements." },
+  { icon: Clock, gradient: "from-teal-400 to-cyan-500", title: "Timely Execution", desc: "We prioritize speed, efficiency and reliability to minimize delays." },
 ];
 
 const commitments = [
@@ -162,7 +162,7 @@ export default function About() {
               <Card key={w.title} className="hover:border-accent transition group">
                 <CardContent className="p-6">
                   <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${w.gradient} flex items-center justify-center text-white mb-3 group-hover:scale-110 transition shadow-md`}>
-                    <CheckCircle2 className="h-5 w-5" />
+                    <w.icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-1 font-display font-semibold text-lg">{w.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{w.desc}</p>

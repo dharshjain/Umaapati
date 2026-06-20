@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/site/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, ShieldCheck, Sparkles, HeartHandshake, Lightbulb, Target, Ship, Plane, FileCheck, Truck, Warehouse, ScrollText, Globe2, ChevronRight, Beaker, Pill, Cog, Shirt, ShoppingBag, Wheat, Mountain, Car, Cpu, Factory } from "lucide-react";
+import { ArrowRight, ShieldCheck, Sparkles, HeartHandshake, Lightbulb, Target, Ship, Plane, FileCheck, Truck, Warehouse, ScrollText, Globe2, ChevronRight, Beaker, Pill, Cog, Shirt, ShoppingBag, Wheat, Mountain, Car, Cpu, Factory, Award, Users, ClipboardCheck, Network, Zap, MessageSquare } from "lucide-react";
 import { useEffect, useState } from "react";
 import heroPort from "@/assets/hero-port.jpg";
 import heroAir from "@/assets/hero-air.jpg";
@@ -35,40 +35,40 @@ const values = [
 
 const strengths = [
   {
-    icon: Lightbulb,
+    icon: Award,
     title: "Industry Expertise",
     desc: "With extensive experience in international trade and logistics, we understand the operational, regulatory, and commercial challenges faced by businesses. Our expertise allows us to provide practical and effective solutions tailored to each client's requirements.",
-    gradient: "from-blue-500 to-blue-700",
+    gradient: "from-indigo-500 to-indigo-700",
   },
   {
-    icon: HeartHandshake,
+    icon: Users,
     title: "Customer-Centric Approach",
     desc: "Every business is unique. We take the time to understand our clients' objectives, operational needs, and growth plans before recommending customized solutions that deliver measurable value.",
-    gradient: "from-violet-500 to-violet-700",
+    gradient: "from-pink-500 to-pink-700",
   },
   {
-    icon: ShieldCheck,
+    icon: ClipboardCheck,
     title: "Compliance Excellence",
     desc: "Global trade regulations continue to evolve. Our team remains updated with the latest industry developments, customs requirements, and government policies to ensure that our clients remain compliant and avoid unnecessary risks.",
-    gradient: "from-rose-500 to-rose-700",
+    gradient: "from-red-500 to-rose-600",
   },
   {
-    icon: Target,
+    icon: Network,
     title: "Strong Professional Network",
     desc: "Our extensive network of logistics partners, transportation providers, shipping lines, customs professionals, and industry stakeholders enables us to deliver seamless services across multiple geographies.",
-    gradient: "from-emerald-500 to-emerald-700",
+    gradient: "from-teal-500 to-teal-700",
   },
   {
-    icon: Sparkles,
+    icon: Zap,
     title: "Operational Efficiency",
     desc: "We focus on reducing delays, minimizing operational bottlenecks, and improving overall supply chain performance through streamlined processes and proactive coordination.",
-    gradient: "from-orange-500 to-orange-700",
+    gradient: "from-orange-400 to-amber-500",
   },
   {
-    icon: Globe2,
+    icon: MessageSquare,
     title: "Transparent Communication",
     desc: "We believe transparency is the foundation of successful business relationships. Our clients receive regular updates, clear communication, and responsive support throughout every stage of the process.",
-    gradient: "from-cyan-500 to-cyan-700",
+    gradient: "from-cyan-500 to-sky-600",
   },
 ];
 
