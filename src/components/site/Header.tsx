@@ -20,8 +20,8 @@ export function Header() {
       <div className="hidden md:block bg-brand text-brand-foreground/90 text-sm">
         <div className="container-page flex h-10 items-center justify-between">
           <div className="flex items-center gap-6">
-            <a href="mailto:Deepanshu@Umaapati.com" className="flex items-center gap-2 hover:text-accent transition">
-              <Mail className="h-3.5 w-3.5" /> Deepanshu@Umaapati.com
+            <a href="mailto:Info@umaapati.com" className="flex items-center gap-2 hover:text-accent transition">
+              <Mail className="h-3.5 w-3.5" /> Info@umaapati.com
             </a>
             <a href="tel:+919029079890" className="flex items-center gap-2 hover:text-accent transition">
               <Phone className="h-3.5 w-3.5" /> +91 90290 79890

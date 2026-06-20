@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Layout, PageHeader } from "@/components/site/Layout";
 import { Button } from "@/components/ui/button";
 import {
@@ -234,8 +233,29 @@ const services = [
   },
 ];
 
+const serviceSlugs = [
+  "customs-clearance",
+  "freight-forwarding",
+  "exim-consultancy",
+  "logistics-transportation",
+  "trade-compliance",
+  "warehousing-distribution",
+  "dgft"
+];
+
 export default function Services() {
-  const [active, setActive] = useState(0);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeParam = searchParams.get("type");
+
+  const active = serviceSlugs.indexOf(typeParam || "") !== -1
+    ? serviceSlugs.indexOf(typeParam || "")
+    : 0;
+
+  const setActive = (indexOrFn: number | ((prev: number) => number)) => {
+    const nextIndex = typeof indexOrFn === "function" ? indexOrFn(active) : indexOrFn;
+    setSearchParams({ type: serviceSlugs[nextIndex] }, { replace: true });
+  };
+
   const s = services[active];
 
   return (

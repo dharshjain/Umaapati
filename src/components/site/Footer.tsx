@@ -35,12 +35,13 @@ export function Footer() {
         <div>
           <h4 className="font-display font-semibold mb-4">Services</h4>
           <ul className="space-y-2 text-sm text-brand-foreground/80">
-            <li>Customs Clearance</li>
-            <li>Freight Forwarding</li>
-            <li>DGFT Consultancy</li>
-            <li>Logistics &amp; Transportation</li>
-            <li>Trade Compliance</li>
-            <li>Warehousing &amp; Distribution</li>
+            <li><Link to="/services?type=customs-clearance" className="hover:text-accent transition">Customs Clearance Services</Link></li>
+            <li><Link to="/services?type=freight-forwarding" className="hover:text-accent transition">International Freight Forwarding</Link></li>
+            <li><Link to="/services?type=exim-consultancy" className="hover:text-accent transition">Export Import Consultancy</Link></li>
+            <li><Link to="/services?type=logistics-transportation" className="hover:text-accent transition">Logistics &amp; Transportation Services</Link></li>
+            <li><Link to="/services?type=trade-compliance" className="hover:text-accent transition">Trade Compliance &amp; Regulatory Services</Link></li>
+            <li><Link to="/services?type=warehousing-distribution" className="hover:text-accent transition">Warehousing &amp; Distribution Services</Link></li>
+            <li><Link to="/services?type=dgft" className="hover:text-accent transition">DGFT Services</Link></li>
           </ul>
         </div>
 
@@ -49,7 +50,7 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-brand-foreground/80">
             <li className="flex gap-2"><MapPin className="h-4 w-4 mt-0.5 text-accent" /> India</li>
             <li className="flex gap-2"><Phone className="h-4 w-4 mt-0.5 text-accent" /> Deepanshu Jharodia · +91 90290 79890</li>
-            <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-accent" /> Deepanshu@Umaapati.com</li>
+            <li className="flex gap-2"><Mail className="h-4 w-4 mt-0.5 text-accent" /> <a href="mailto:Info@umaapati.com" className="hover:text-accent transition">Info@umaapati.com</a></li>
           </ul>
         </div>
       </div>

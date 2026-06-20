@@ -40,7 +40,7 @@ export default function Contact() {
               <Mail className="h-6 w-6" />
             </div>
             <h3 className="mt-4 font-display font-semibold text-lg">Email</h3>
-            <a href="mailto:Deepanshu@Umaapati.com" className="mt-2 block text-sm text-brand hover:text-accent break-all">Deepanshu@Umaapati.com</a>
+            <a href="mailto:Info@umaapati.com" className="mt-2 block text-sm text-brand hover:text-accent break-all">Info@umaapati.com</a>
           </CardContent>
         </Card>
       </section>
@@ -57,7 +57,7 @@ export default function Contact() {
                 <div className="mt-10 space-y-4 text-sm">
                   <p className="flex items-center gap-3"><User className="h-4 w-4 text-accent" /> Deepanshu Jharodia</p>
                   <p className="flex items-center gap-3"><Phone className="h-4 w-4 text-accent" /> +91 90290 79890</p>
-                  <p className="flex items-center gap-3"><Mail className="h-4 w-4 text-accent" /> Deepanshu@Umaapati.com</p>
+                  <p className="flex items-center gap-3"><Mail className="h-4 w-4 text-accent" /> Info@umaapati.com</p>
                   <p className="flex items-center gap-3"><MapPin className="h-4 w-4 text-accent" /> India</p>
                 </div>
               </div>
