@@ -362,67 +362,20 @@ export default function Services() {
               </div>
 
               {/* Body — image right on desktop, image above on mobile */}
-              <div className="p-5 md:p-8">
-                <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-
-                  {/* ── Text — order-2 mobile (below image), order-1 desktop (left) ── */}
-                  <div className="flex-1 min-w-0 space-y-5 order-2 md:order-1">
-                    <div className="space-y-3 text-muted-foreground leading-relaxed text-sm md:text-base">
-                      {s.paragraphs.map((para, i) => (
-                        <p key={i}>{para}</p>
-                      ))}
-                    </div>
-
-                    <div>
-                      <div className="flex items-center gap-2 mb-4">
-                        <div className={`h-0.5 w-8 rounded-full ${s.accentBg}`} />
-                        <p className={`font-semibold text-xs md:text-sm uppercase tracking-wider ${s.accentText}`}>
-                          {s.listHeading}
-                        </p>
-                      </div>
-                      <ul className="grid gap-2 sm:grid-cols-2">
-                        {s.points.map((p) => (
-                          <li key={p} className="flex items-start gap-2.5">
-                            <CheckCircle2 className={`h-4 w-4 shrink-0 mt-0.5 ${s.accentText}`} />
-                            <span className="text-xs md:text-sm text-foreground">{p}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Prev / Next navigation */}
-                    <div className="flex items-center justify-between pt-5 border-t">
-                      <button
-                        onClick={() => setActive((prev) => Math.max(0, prev - 1))}
-                        disabled={active === 0}
-                        className="flex items-center gap-1.5 text-xs md:text-sm font-medium text-muted-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition"
-                      >
-                        <ChevronRight className="h-4 w-4 rotate-180" />
-                        Previous
-                      </button>
-                      <div className="flex gap-1.5">
-                        {services.map((_, i) => (
-                          <button
-                            key={i}
-                            onClick={() => setActive(i)}
-                            className={`h-1.5 md:h-2 rounded-full transition-all duration-300 ${i === active ? `w-5 md:w-6 ${s.accentBg}` : "w-1.5 md:w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60"}`}
-                          />
-                        ))}
-                      </div>
-                      <button
-                        onClick={() => setActive((prev) => Math.min(services.length - 1, prev + 1))}
-                        disabled={active === services.length - 1}
-                        className="flex items-center gap-1.5 text-xs md:text-sm font-medium text-muted-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition"
-                      >
-                        Next
-                        <ChevronRight className="h-4 w-4" />
-                      </button>
-                    </div>
+              <div className="p-5 md:p-8 space-y-8">
+                
+                {/* Row 1: Description (left) and Image (right) */}
+                <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-stretch">
+                  {/* Paragraphs */}
+                  <div className="flex-1 min-w-0 space-y-3 text-muted-foreground leading-relaxed text-sm md:text-base order-2 md:order-1">
+                    {s.paragraphs.map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
                   </div>
 
-                  {/* ── Image — order-1 mobile (above text), order-2 desktop (right) ── */}
-                  <div className="w-full md:w-64 lg:w-72 shrink-0 order-1 md:order-2">
-                    <div className="relative rounded-2xl overflow-hidden shadow-md h-48 md:h-80">
+                  {/* Image */}
+                  <div className="w-full md:w-64 lg:w-80 shrink-0 order-1 md:order-2 self-stretch">
+                    <div className="relative rounded-2xl overflow-hidden shadow-md h-48 md:h-full min-h-[240px]">
                       <img
                         src={s.image}
                         alt={s.title}
@@ -436,8 +389,55 @@ export default function Services() {
                       </div>
                     </div>
                   </div>
-
                 </div>
+
+                {/* Row 2: List of Points (Full width!) */}
+                <div className="border-t pt-8">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className={`h-0.5 w-8 rounded-full ${s.accentBg}`} />
+                    <p className={`font-semibold text-xs md:text-sm uppercase tracking-wider ${s.accentText}`}>
+                      {s.listHeading}
+                    </p>
+                  </div>
+                  <ul className="grid gap-2.5 sm:grid-cols-2 md:grid-cols-3">
+                    {s.points.map((p) => (
+                      <li key={p} className="flex items-start gap-2.5">
+                        <CheckCircle2 className={`h-4 w-4 shrink-0 mt-0.5 ${s.accentText}`} />
+                        <span className="text-xs md:text-sm text-foreground">{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Row 3: Prev / Next navigation (Full width!) */}
+                <div className="flex items-center justify-between pt-5 border-t">
+                  <button
+                    onClick={() => setActive((prev) => Math.max(0, prev - 1))}
+                    disabled={active === 0}
+                    className="flex items-center gap-1.5 text-xs md:text-sm font-medium text-muted-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition"
+                  >
+                    <ChevronRight className="h-4 w-4 rotate-180" />
+                    Previous
+                  </button>
+                  <div className="flex gap-1.5">
+                    {services.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setActive(i)}
+                        className={`h-1.5 md:h-2 rounded-full transition-all duration-300 ${i === active ? `w-5 md:w-6 ${s.accentBg}` : "w-1.5 md:w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60"}`}
+                      />
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => setActive((prev) => Math.min(services.length - 1, prev + 1))}
+                    disabled={active === services.length - 1}
+                    className="flex items-center gap-1.5 text-xs md:text-sm font-medium text-muted-foreground hover:text-foreground disabled:opacity-30 disabled:cursor-not-allowed transition"
+                  >
+                    Next
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                </div>
+
               </div>
             </div>
           </div>
