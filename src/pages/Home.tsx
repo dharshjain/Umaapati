@@ -16,13 +16,13 @@ const slides = [
 ];
 
 const services = [
-  { icon: FileCheck, gradient: "from-blue-500 to-blue-700", title: "Customs Clearance", desc: "Sea, air & project cargo clearance — accurate, compliant, on time." },
-  { icon: Ship, gradient: "from-cyan-500 to-cyan-700", title: "Freight Forwarding", desc: "Ocean, air & multimodal freight with a trusted global carrier network." },
-  { icon: Globe2, gradient: "from-violet-500 to-violet-700", title: "EXIM Consultancy", desc: "Strategic guidance on documentation, licensing and trade policy." },
-  { icon: Truck, gradient: "from-orange-500 to-orange-700", title: "Logistics & Transport", desc: "Domestic transportation, port connectivity and last-mile delivery." },
-  { icon: ScrollText, gradient: "from-rose-500 to-rose-700", title: "Trade Compliance", desc: "BIS, FSSAI, WPC, LMPC, EPR and product compliance support." },
-  { icon: Warehouse, gradient: "from-emerald-500 to-emerald-700", title: "Warehousing & Distribution", desc: "Secure storage, inventory management and order fulfillment." },
-  { icon: Plane, gradient: "from-sky-500 to-sky-700", title: "DGFT Services", desc: "IEC, Advance Authorization, EPCG, RoDTEP and licensing support." },
+  { icon: FileCheck, gradient: "from-blue-500 to-blue-700", title: "Customs Clearance", desc: "Sea, air & project cargo clearance — accurate, compliant, on time.", image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=600", slug: "customs-clearance" },
+  { icon: Ship, gradient: "from-cyan-500 to-cyan-700", title: "Freight Forwarding", desc: "Ocean, air & multimodal freight with a trusted global carrier network.", image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80&w=600", slug: "freight-forwarding" },
+  { icon: Globe2, gradient: "from-violet-500 to-violet-700", title: "EXIM Consultancy", desc: "Strategic guidance on documentation, licensing and trade policy.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=600", slug: "exim-consultancy" },
+  { icon: Truck, gradient: "from-orange-500 to-orange-700", title: "Logistics & Transport", desc: "Domestic transportation, port connectivity and last-mile delivery.", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&q=80&w=600", slug: "logistics-transportation" },
+  { icon: ScrollText, gradient: "from-rose-500 to-rose-700", title: "Trade Compliance", desc: "BIS, FSSAI, WPC, LMPC, EPR and product compliance support.", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600", slug: "trade-compliance" },
+  { icon: Warehouse, gradient: "from-emerald-500 to-emerald-700", title: "Warehousing & Distribution", desc: "Secure storage, inventory management and order fulfillment.", image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=600", slug: "warehousing-distribution" },
+  { icon: Plane, gradient: "from-sky-500 to-sky-700", title: "DGFT Services", desc: "IEC, Advance Authorization, EPCG, RoDTEP and licensing support.", image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&q=80&w=600", slug: "dgft" },
 ];
 
 const values = [
@@ -143,14 +143,14 @@ export default function Home() {
       <Hero />
 
       {/* Intro strip */}
-      <section className="bg-secondary/40 py-10">
-        <div className="container-page grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      <section className="relative z-20 -mt-10 mb-10 container-page">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 bg-background/80 backdrop-blur border border-border/60 rounded-3xl p-5 shadow-elev">
           {introServices.map((item) => (
-            <div key={item.label} className="group flex items-center gap-3 rounded-2xl bg-background border border-border px-4 py-3.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+            <div key={item.label} className="group flex items-center gap-3 rounded-2xl hover:bg-secondary/40 px-3 py-2.5 transition-all duration-200">
               <div className={`h-9 w-9 shrink-0 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center text-white shadow-sm group-hover:scale-110 transition-transform`}>
                 <item.icon className="h-4 w-4" />
               </div>
-              <span className="text-sm font-semibold leading-tight">{item.label}</span>
+              <span className="text-sm font-semibold leading-tight text-foreground/80 group-hover:text-brand transition-colors">{item.label}</span>
             </div>
           ))}
         </div>
@@ -202,49 +202,86 @@ export default function Home() {
 
       {/* Our Strengths */}
       <section className="container-page py-20">
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-accent text-sm font-semibold tracking-widest uppercase">Why Work With Us</p>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2">Our Strengths</h2>
-          <p className="mt-4 text-muted-foreground">What sets us apart in delivering world-class international trade and logistics solutions.</p>
-        </div>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {strengths.map((st) => (
-            <div
-              key={st.title}
-              className="group relative rounded-2xl border bg-card p-7 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-            >
-              {/* subtle gradient top-left glow */}
-              <div className={`absolute -top-8 -left-8 h-24 w-24 rounded-full bg-gradient-to-br ${st.gradient} opacity-10 group-hover:opacity-20 transition-opacity blur-2xl`} />
-              {/* Icon */}
-              <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${st.gradient} flex items-center justify-center text-white mb-5 shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                <st.icon className="h-6 w-6" />
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
+          {/* Left Column: Visual focal point */}
+          <div className="w-full lg:w-5/12 relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-elev h-[500px]">
+              <img
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
+                alt="Cargo Operations"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/40 to-transparent" />
+              
+              <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
+                <span className="text-accent text-xs font-bold tracking-widest uppercase mb-2">Why Work With Us</span>
+                <h3 className="text-3xl font-bold font-display leading-tight">Delivering operational excellence across global networks</h3>
+                <p className="mt-3 text-sm text-white/80 leading-relaxed">
+                  We blend deep compliance expertise, modern technology, and global partnerships to move your business forward.
+                </p>
               </div>
-              {/* Content */}
-              <h3 className="font-display font-bold text-lg mb-2">{st.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{st.desc}</p>
             </div>
-          ))}
+            {/* Decorative colored glow in the background */}
+            <div className="absolute -bottom-8 -left-8 h-48 w-48 rounded-full bg-accent/20 blur-3xl -z-10" />
+          </div>
+
+          {/* Right Column: List of 6 Strengths */}
+          <div className="w-full lg:w-7/12">
+            <div className="max-w-2xl">
+              <p className="text-accent text-sm font-semibold tracking-widest uppercase">Our Strengths</p>
+              <h2 className="text-4xl md:text-5xl font-bold mt-2">What sets us apart</h2>
+              <p className="mt-4 text-muted-foreground">What sets us apart in delivering world-class international trade and logistics solutions.</p>
+            </div>
+            
+            <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {strengths.map((st) => (
+                <div
+                  key={st.title}
+                  className="group flex gap-4 p-4 rounded-xl hover:bg-secondary/40 transition-all duration-300"
+                >
+                  <div className={`h-10 w-10 shrink-0 rounded-xl bg-gradient-to-br ${st.gradient} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                    <st.icon className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-bold text-base mb-1 group-hover:text-brand transition-colors">{st.title}</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{st.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Core Values */}
-      <section className="bg-secondary/40 py-20">
-        <div className="container-page">
+      <section className="bg-brand text-brand-foreground py-20 relative overflow-hidden">
+        {/* Background radial glows */}
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(circle at 10% 20%, oklch(0.72 0.18 50 / 0.5), transparent 45%), radial-gradient(circle at 90% 80%, oklch(0.55 0.18 220 / 0.5), transparent 45%)" }} />
+        
+        <div className="container-page relative z-10">
           <div className="text-center max-w-2xl mx-auto">
             <p className="text-accent text-sm font-semibold tracking-widest uppercase">What We Stand For</p>
             <h2 className="text-4xl md:text-5xl font-bold mt-2">Our Core Values</h2>
           </div>
+          
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            {values.map((v) => (
-              <Card key={v.title} className="hover:border-accent hover:shadow-card transition group">
-                <CardContent className="p-6">
-                  <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${v.gradient} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition shadow-md`}>
-                    <v.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="font-display font-semibold">{v.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{v.desc}</p>
-                </CardContent>
-              </Card>
+            {values.map((v, index) => (
+              <div
+                key={v.title}
+                className="group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1"
+              >
+                {/* Background index number */}
+                <span className="absolute right-4 top-4 text-5xl font-bold font-display text-white/5 group-hover:text-white/10 transition-colors pointer-events-none">
+                  0{index + 1}
+                </span>
+
+                <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${v.gradient} flex items-center justify-center text-white mb-6 group-hover:scale-110 transition shadow-md`}>
+                  <v.icon className="h-6 w-6" />
+                </div>
+                
+                <h3 className="font-display font-semibold text-lg text-white mb-2">{v.title}</h3>
+                <p className="text-sm text-white/70 group-hover:text-white/85 transition-colors leading-relaxed">{v.desc}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -258,17 +295,41 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mt-2">End-to-end EXIM &amp; Logistics</h2>
             <p className="mt-4 text-muted-foreground">A single partner across the full international trade lifecycle.</p>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {services.map((s) => (
-              <Card key={s.title} className="group border-border hover:border-accent transition-all hover:-translate-y-1 hover:shadow-card">
-                <CardContent className="p-6">
-                  <div className={`h-12 w-12 rounded-xl bg-gradient-to-br ${s.gradient} flex items-center justify-center text-white mb-4 group-hover:scale-110 transition shadow-md`}>
-                    <s.icon className="h-6 w-6" />
+              <Link
+                key={s.title}
+                to={`/services?type=${s.slug}`}
+                className="group relative h-80 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5"
+              >
+                {/* Background Image */}
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10 transition-opacity duration-300 group-hover:opacity-95" />
+                
+                {/* Content */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
+                  {/* Floating Icon */}
+                  <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${s.gradient} flex items-center justify-center text-white mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                    <s.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="font-display font-semibold text-lg">{s.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
-                </CardContent>
-              </Card>
+                  <h3 className="font-display font-bold text-lg leading-tight group-hover:text-accent transition-colors">
+                    {s.title}
+                  </h3>
+                  <p className="mt-2 text-xs text-white/80 line-clamp-2 leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity">
+                    {s.desc}
+                  </p>
+                  
+                  {/* Hover view link arrow */}
+                  <div className="mt-3 flex items-center gap-1 text-xs font-semibold text-accent opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                    Learn More <ArrowRight className="h-3 w-3" />
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
           <div className="text-center mt-10">
@@ -289,14 +350,14 @@ export default function Home() {
           {industries.map((ind) => (
             <div
               key={ind.name}
-              className="group relative rounded-2xl border bg-card p-5 text-center shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              className="group relative rounded-2xl bg-secondary/50 p-5 text-center transition-all duration-300 hover:bg-background hover:shadow-card hover:-translate-y-1 overflow-hidden"
             >
               {/* ambient glow */}
               <div className={`absolute -top-6 left-1/2 -translate-x-1/2 h-16 w-16 rounded-full bg-gradient-to-br ${ind.gradient} opacity-10 group-hover:opacity-25 blur-xl transition-opacity`} />
               <div className={`mx-auto h-12 w-12 rounded-xl bg-gradient-to-br ${ind.gradient} flex items-center justify-center text-white mb-3 shadow-md group-hover:scale-110 transition-transform duration-300`}>
                 <ind.icon className="h-6 w-6" />
               </div>
-              <p className="text-sm font-semibold leading-snug">{ind.name}</p>
+              <p className="text-sm font-semibold leading-snug text-foreground/90 group-hover:text-brand transition-colors">{ind.name}</p>
             </div>
           ))}
         </div>
